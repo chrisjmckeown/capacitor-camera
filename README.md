@@ -7,8 +7,11 @@
 - install `npm install @capacitor/core @capacitor/ios @capacitor/android`
 - run `npx cap add ios` to create a native ios project
 - run `npx cap add android` to create a native android project
-- open the ios project `npx cap open ios`, just opens a windows folder on a Windows PC.
+- open the ios project `npx cap open android`, just opens a windows folder on a Windows PC.
 - open the android project `npx cap open android`, opens Android studio. Can take some time to build.
+
+- add `local.properties` to `android\local.properties`
+- To set java version `Ctrl + Alt + S` then, go to "Build, Execution, Deployment > Build Tools > Gradle
 
 ## Start
 
@@ -25,13 +28,6 @@ to the `capacitor.config.ts` file add
 ```
   server: {
     url: 'http://172.22.112.1:3000',
-    ...
-  }
-```
-
-```
-  server: {
-    url: 'http://172.22.127.134:3000',
     ...
   }
 ```
