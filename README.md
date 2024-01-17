@@ -1,20 +1,37 @@
-`npm run build` to create out folder
-install capactitor `npm install -D @capacitor/cli`
-run `npx cap init`
-in the `capacitor.config.ts` change `webDir: 'public',` to `webDir: 'out',`
-install `npm install @capacitor/core @capacitor/ios @capacitor/android`
-run `npx cap add ios` to create a native ios project
-run `npx cap add android` to create a native android project
-open the ios project `npx cap open ios`, just opens a windows folder on a Windows PC.
-open the android project `npx cap open android`, opens Android studio. Can take some time to build.
+# Setup
+
+- `npm run build` to create out folder
+- install capactitor `npm install -D @capacitor/cli`
+- run `npx cap init`
+- in the `capacitor.config.ts` change `webDir: 'public',` to `webDir: 'out',`
+- install `npm install @capacitor/core @capacitor/ios @capacitor/android`
+- run `npx cap add ios` to create a native ios project
+- run `npx cap add android` to create a native android project
+- open the ios project `npx cap open ios`, just opens a windows folder on a Windows PC.
+- open the android project `npx cap open android`, opens Android studio. Can take some time to build.
+
+## Start
+
+- git pull
+- npm install
+- npm run dev
+- npx cap open android
 
 ## Live reload / hot reload
 
+wsl check ip address: `ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}'`
 to the `capacitor.config.ts` file add
 
 ```
   server: {
-    url: 'http://172.22.112.1:3001',
+    url: 'http://172.22.112.1:3000',
+    ...
+  }
+```
+
+```
+  server: {
+    url: 'http://172.22.127.134:3000',
     ...
   }
 ```

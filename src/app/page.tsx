@@ -101,6 +101,18 @@ export default function Home() {
               capture="user"
             />
           </Button>
+
+          <Button onClick={onFileUploadClick}>
+            File upload
+            <Input
+              type="file"
+              accept="image/*"
+              onChange={onImageUpload}
+              ref={fileInputRef}
+              id="fileInput"
+              className="hidden"
+            />
+          </Button>
         </>
         <p>{photo?.toString()}</p>
         {photo && (
