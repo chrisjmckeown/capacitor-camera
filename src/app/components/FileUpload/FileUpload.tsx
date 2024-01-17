@@ -38,7 +38,7 @@ export const FileUpload: React.FC<FileUploadProps> = ({
 
   return (
     <Button onClick={onFileUploadClick}>
-      File
+      Camera
       <Input
         type="file"
         {...(accept ? { accept: accept } : {})}
