@@ -40,6 +40,18 @@ install `npm i @capacitor/camera`
 
 ## Android
 
+    <queries>
+        <!-- Camera -->
+        <intent>
+            <action android:name="android.media.action.IMAGE_CAPTURE" />
+        </intent>
+
+        <!-- Gallery -->
+        <intent>
+            <action android:name="android.intent.action.GET_CONTENT" />
+        </intent>
+    </queries>
+
 add below to android\app\src\main\AndroidManifest.xml > permissions section
 
 ```
