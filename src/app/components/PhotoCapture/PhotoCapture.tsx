@@ -38,10 +38,7 @@ export const PhotoCapture: React.FC<PhotoUploaderProps> = ({
         <FileAndPhotoUpload onCaptureImage={onCaptureImage} />
       )}
       {isMobile && ( //!Capacitor.isNativePlatform() &&
-        <FileUpload
-          onPhotoDataUrlChange={onCaptureImage}
-          capture={"environment"}
-        />
+        <FileUpload onPhotoDataUrlChange={onCaptureImage} capture={"user"} />
       )}
       {/* {Capacitor.isNativePlatform() && (
         <FileUpload
