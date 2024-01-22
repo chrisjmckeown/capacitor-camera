@@ -37,20 +37,17 @@ export const PhotoCapture: React.FC<PhotoUploaderProps> = ({
       {!isMobile && ( //!Capacitor.isNativePlatform() &&
         <FileAndPhotoUpload onCaptureImage={onCaptureImage} />
       )}
-      null
+      <p className="leading-7 [&:not(:first-child)]:mt-6">
+        {Capacitor.isNativePlatform()
+          ? "capture is set on native device to environment"
+          : "capture is not set for mobile web"}
+      </p>
       {isMobile && ( //!Capacitor.isNativePlatform() &&
         <FileUpload
           onPhotoDataUrlChange={onCaptureImage}
-          // capture={"environment"}
-          // capture={"user"}
+          {...(Capacitor.isNativePlatform() ? { capture: "environment" } : {})}
         />
       )}
-      {/* {Capacitor.isNativePlatform() && (
-        <FileUpload
-          onPhotoDataUrlChange={onCaptureImage}
-          capture={"environment"}
-        />
-      )} */}
     </motion.div>
   );
 };
