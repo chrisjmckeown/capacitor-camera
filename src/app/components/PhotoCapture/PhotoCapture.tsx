@@ -34,18 +34,21 @@ export const PhotoCapture: React.FC<PhotoUploaderProps> = ({
       transition={{ delay: 0.2, duration: 0.5 }}
       className="flex flex-col w-full h-full"
     >
-      {!Capacitor.isNativePlatform() && !isMobile && (
+      {!isMobile && ( //!Capacitor.isNativePlatform() &&
         <FileAndPhotoUpload onCaptureImage={onCaptureImage} />
       )}
-      {!Capacitor.isNativePlatform() && isMobile && (
-        <FileUpload onPhotoDataUrlChange={onCaptureImage} />
-      )}
-      {Capacitor.isNativePlatform() && (
+      {isMobile && ( //!Capacitor.isNativePlatform() &&
         <FileUpload
           onPhotoDataUrlChange={onCaptureImage}
           capture={"environment"}
         />
       )}
+      {/* {Capacitor.isNativePlatform() && (
+        <FileUpload
+          onPhotoDataUrlChange={onCaptureImage}
+          capture={"environment"}
+        />
+      )} */}
     </motion.div>
   );
 };
